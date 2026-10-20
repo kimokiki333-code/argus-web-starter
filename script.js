@@ -21,13 +21,11 @@ async function runScan() {
   const requestBody = {
     target,
     modules: selectedModules,
-    options: {
-      mode: 'demo'
-    }
+    options: {}
   };
 
   try {
-    const response = await fetch('https://httpbin.org/post', {
+    const response = await fetch('/api/scan', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -36,14 +34,7 @@ async function runScan() {
     });
 
     const data = await response.json();
-
-    resultBox.textContent = JSON.stringify({
-      status: 'demo_result',
-      target,
-      modules: selectedModules,
-      request: requestBody,
-      response: data
-    }, null, 2);
+    resultBox.textContent = JSON.stringify(data, null, 2);
   } catch (error) {
     resultBox.textContent = 'Request failed: ' + error.message;
   }

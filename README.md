@@ -1,26 +1,27 @@
-# Argus Web
+# Argus Recon
 
-This repo is reset to a deployable static website shell for the Argus project.
+This project is the real backend version of the Argus dashboard.
 
-## Files
+## Features
 
-- `index.html` — homepage and UI
-- `styles.css` — visual design
-- `script.js` — frontend interaction
+- FastAPI backend
+- target input form
+- scan modules for DNS, ports, headers, SSL, and WHOIS
+- real Python-based recon logic
+- output shown directly in the browser UI
 
-## Upload to a host
-
-Upload this folder to any static host such as:
-
-- GitHub Pages
-- Netlify
-- Vercel
-- Cloudflare Pages
-
-## Run locally
+## Install
 
 ```bash
-python -m http.server 8000
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Run
+
+```bash
+python app.py
 ```
 
 Then open:
@@ -31,4 +32,4 @@ http://localhost:8000
 
 ## Notes
 
-This is the clean deployable website version of the project. It is built for static hosting and is ready to be published after upload.
+This version is designed to run on a Python server and is intended to be deployed on a capable host like Render, Railway, or a VPS. It is no longer a static mock-only front-end.
