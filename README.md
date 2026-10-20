@@ -1,48 +1,34 @@
-# Argus Web Starter
+# Argus Web
 
-A minimal website-ready starter app for the Argus recon project.
+This repo is reset to a deployable static website shell for the Argus project.
+
+## Files
+
+- `index.html` — homepage and UI
+- `styles.css` — visual design
+- `script.js` — frontend interaction
+
+## Upload to a host
+
+Upload this folder to any static host such as:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Cloudflare Pages
 
 ## Run locally
 
-1. Create a virtual environment:
-
 ```bash
-python -m venv .venv
+python -m http.server 8000
 ```
 
-2. Activate it:
-
-On Windows PowerShell:
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Start the app:
-
-```bash
-python app.py
-```
-
-5. Open the app in your browser:
+Then open:
 
 ```text
 http://localhost:8000
 ```
 
-## What this includes
-
-- FastAPI backend
-- HTML dashboard UI
-- Target input and module selection
-- API endpoint for scanning requests
-- Ready to be connected to your real Argus modules later
-
 ## Notes
 
-This starter is a working web shell only. It does not yet call your actual recon scripts. The next step is to replace the `/api/scan` handler with real Argus module logic.
+This is the clean deployable website version of the project. It is built for static hosting and is ready to be published after upload.

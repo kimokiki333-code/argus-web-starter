@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Argus Dashboard</title>
+    <meta
+      name="description"
+      content="Argus dashboard for recon and reconnaissance workflows."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand-mark">A</div>
+          <div>
+            <h1>Argus</h1>
+            <p>Recon Dashboard</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-item active" type="button">Dashboard</button>
+          <button class="nav-item" type="button">Targets</button>
+          <button class="nav-item" type="button">Modules</button>
+          <button class="nav-item" type="button">Reports</button>
+        </nav>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Security Platform</p>
+            <h2>Target Scanner</h2>
+          </div>
+          <button class="primary-btn" id="scanBtn" type="button">Run Scan</button>
+        </header>
+
+        <section class="panel">
+          <label class="field-label" for="targetInput">Target</label>
+          <input
+            id="targetInput"
+            type="text"
+            value="example.com"
+            autocomplete="off"
+            placeholder="example.com"
+          />
+
+          <div class="module-grid" aria-label="Scan modules">
+            <label class="module-option"><input type="checkbox" value="dns" checked /> DNS</label>
+            <label class="module-option"><input type="checkbox" value="ports" checked /> Ports</label>
+            <label class="module-option"><input type="checkbox" value="headers" /> Headers</label>
+            <label class="module-option"><input type="checkbox" value="ssl" /> SSL</label>
+            <label class="module-option"><input type="checkbox" value="subdomains" /> Subdomains</label>
+            <label class="module-option"><input type="checkbox" value="whois" /> WHOIS</label>
+          </div>
+        </section>
+
+        <section class="panel output-panel">
+          <div class="panel-header">
+            <h3>Scan Results</h3>
+          </div>
+          <pre id="resultBox">No scan run yet.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
