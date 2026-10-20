@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Argus Dashboard</title>
-    <meta name="description" content="Argus recon dashboard for DNS, ports, headers, SSL, and WHOIS checks." />
+    <meta
+      name="description"
+      content="Argus recon dashboard with structured DNS, port, header, SSL, and WHOIS results."
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -56,9 +59,14 @@
 
         <section class="panel output-panel">
           <div class="panel-header">
-            <h3>Scan Results</h3>
+            <h3>Reports</h3>
+            <span class="status-pill" id="statusPill">Awaiting input</span>
           </div>
-          <pre id="resultBox">No scan run yet.</pre>
+          <div id="resultsGrid" class="results-grid">
+            <div class="empty-state">
+              No scan has been run yet. Select a target and click “Run Scan”.
+            </div>
+          </div>
         </section>
       </main>
     </div>
